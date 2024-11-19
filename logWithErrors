@@ -1,0 +1,96 @@
+[14:36:52][C][template.switch:068]: Template Switch 'Mic mute'
+[14:36:52][C][template.switch:070]:   Icon: 'mdi:microphone-off'
+[14:36:52][C][template.switch:091]:   Restore Mode: always OFF
+[14:36:52][C][template.switch:057]:   Optimistic: NO
+[14:36:52][C][psram:020]: PSRAM:
+[14:36:52][C][psram:021]:   Available: YES
+[14:36:52][C][psram:024]:   Size: 8191 KB
+[14:36:52][C][safe_mode.button:024]: Safe Mode Button 'Safe Mode Boot'
+[14:36:52][C][safe_mode.button:024]:   Icon: 'mdi:restart-alert'
+[14:36:52][D][switch:016]: 'Mic mute' Turning OFF.
+[14:36:52][D][switch:012]: 'mute_toggle' Turning ON.
+[14:36:52][D][switch:055]: 'mute_toggle': Sending state ON
+[14:36:52][D][micro_wake_word:379]: Starting wake word detection
+[14:36:52][D][light:036]: 'respeaker-satellite' Setting:
+[14:36:52][D][light:047]:   State: OFF
+[14:36:52][D][light:109]:   Effect: 'None'
+[14:36:52][C][factory_reset.button:011]: Factory Reset Button 'Factory reset'
+[14:36:52][C][factory_reset.button:011]:   Icon: 'mdi:restart-alert'
+[14:36:52][D][esp-idf:000][microphone_task]: I (6573) I2S: DMA Malloc info, datalen=blocksize=1280, dma_buf_count=4
+
+[14:36:52][C][restart.button:017]: Restart Button 'Restart'
+[14:36:52][C][restart.button:017]:   Icon: 'mdi:restart'
+[14:36:52][D][i2s_audio.microphone:377]: Starting I2S Audio Microphne
+[14:36:52][D][i2s_audio.microphone:381]: Started I2S Audio Microphone
+[14:36:52][D][micro_wake_word:418]: State changed from IDLE to DETECTING_WAKE_WORD
+[14:36:52][C][aic3204:112]: AIC3204:
+[14:36:52][C][aic3204:113]:   Address: 0x18
+[14:36:52][C][captive_portal:089]: Captive Portal:
+[14:36:52][C][mdns:116]: mDNS:
+[14:36:52][C][mdns:117]:   Hostname: respeaker-satellite
+[14:36:52][C][esphome.ota:073]: Over-The-Air updates:
+[14:36:52][C][esphome.ota:074]:   Address: respeaker-satellite.local:3232
+[14:36:52][C][esphome.ota:075]:   Version: 2
+[14:36:52][C][esphome.ota:078]:   Password configured
+[14:36:52][C][safe_mode:018]: Safe Mode:
+[14:36:52][C][safe_mode:020]:   Boot considered successful after 60 seconds
+[14:36:52][C][safe_mode:021]:   Invoke after 10 boot attempts
+[14:36:52][C][safe_mode:023]:   Remain in safe mode for 300 seconds
+[14:36:52][C][api:140]: API Server:
+[14:36:53][C][api:141]:   Address: respeaker-satellite.local:6053
+[14:36:53][C][api:145]:   Using noise encryption: NO
+[14:36:53][C][micro_wake_word:072]: microWakeWord:
+[14:36:53][C][micro_wake_word:073]:   models:
+[14:36:53][C][micro_wake_word:015]:     - Wake Word: Alexa
+[14:36:53][C][micro_wake_word:016]:       Probability cutoff: 0.90
+[14:36:53][C][micro_wake_word:017]:       Sliding window size: 5
+[14:36:53][C][micro_wake_word:015]:     - Wake Word: Stop
+[14:36:53][C][micro_wake_word:016]:       Probability cutoff: 0.50
+[14:36:53][C][micro_wake_word:017]:       Sliding window size: 5
+[14:36:53][C][micro_wake_word:021]:     - VAD Model
+[14:36:53][C][micro_wake_word:022]:       Probability cutoff: 0.50
+[14:36:53][C][micro_wake_word:023]:       Sliding window size: 5
+[14:36:53][D][switch:016]: 'mute_toggle' Turning OFF.
+[14:36:53][D][switch:055]: 'mute_toggle': Sending state OFF
+[14:36:53][I][respeaker_lite:076]: Mic mute state: 0
+[14:36:53][D][binary_sensor:036]: 'mute_state': Sending state OFF
+[14:36:53][D][switch:055]: 'Mic mute': Sending state OFF
+[14:36:53][D][media_player:080]: 'Media Player' - Setting
+[14:36:53][D][media_player:093]:  Announcement: yes
+[14:36:53][D][ring_buffer:034]: Created ring buffer with size 48000
+[14:36:53][D][ring_buffer:034]: Created ring buffer with size 48000
+[14:36:53][D][ring_buffer:034]: Created ring buffer with size 65536
+[14:36:53][D][ring_buffer:034]: Created ring buffer with size 65536
+[14:36:53][D][nabu_media_player.pipeline:174]: Reading FLAC file type
+[14:36:53][D][nabu_media_player.pipeline:186]: Decoded audio has 1 channels, 48000 Hz sample rate, and 16 bits per sample
+[14:36:53][D][nabu_media_player.pipeline:208]: Converting the audio sample rate
+[14:36:53][D][nabu_media_player.pipeline:211]: Converting mono channel audio to stereo channel audio
+[14:36:53][D][ring_buffer:034][speaker_task]: Created ring buffer with size 16384
+[14:36:53][D][esp-idf:000][speaker_task]: I (6960) I2S: DMA Malloc info, datalen=blocksize=2048, dma_buf_count=4
+
+[14:36:53][D][i2s_audio.speaker:123]: Started Speaker
+[14:36:55][D][esp-idf:000][speaker_task]: I (9481) I2S: DMA queue destroyed
+
+[14:36:55][D][i2s_audio.speaker:130]: Stopping Speaker
+[14:36:55][D][i2s_audio.speaker:136]: Stopped Speaker
+[14:37:47][I][safe_mode:041]: Boot seems successful; resetting boot loop counter
+[14:37:47][D][esp32.preferences:114]: Saving 1 preferences to flash...
+[14:37:47][D][esp32.preferences:143]: Saving 1 preferences to flash: 0 cached, 1 written, 0 failed
+
+>>>>selecting HA WW in GUI<<<<<<<<
+
+[14:38:50][D][select:062]: 'Wake word engine location' - Setting
+[14:38:50][D][select:115]: 'Wake word engine location' - Set selected option to: In Home Assistant
+[14:38:50][D][select:015]: 'Wake word engine location': Sending state In Home Assistant (index 0)
+[14:38:50][D][micro_wake_word:400]: Stopping wake word detection
+[14:38:50][D][main:568]: ################################### micro_wake_word.stop
+
+>>>>swapping back to on-board (microwakeword)<<<<
+
+[14:39:37][D][select:062]: 'Wake word engine location' - Setting
+[14:39:37][D][select:115]: 'Wake word engine location' - Set selected option to: On device
+[14:39:37][D][select:015]: 'Wake word engine location': Sending state On device (index 1)
+[14:39:37][W][micro_wake_word:375]: Wake word dection is already running
+[14:39:37][D][main:587]: ##################################### micro_wake_word.start
+
+XXXX wake word doesn't work from here onwards until a reboot XXXX
