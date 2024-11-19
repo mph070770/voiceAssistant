@@ -519,6 +519,10 @@ voice_assistant:
     - lambda: id(voice_assistant_phase) = ${voice_assist_replying_phase_id};
     - script.execute: adjust_led
     - script.execute: activate_stop_word_if_tts_step_is_long
+  on_tts_end:
+    - logger.log: "#############TTS_End"
+    - lambda: id(voice_assistant_phase) = ${voice_assist_idle_phase_id};
+    - script.execute: adjust_led
   on_end:
     - wait_until:
         not:
@@ -532,6 +536,54 @@ voice_assistant:
     - lambda: id(stop_word).disable();
   on_timer_finished:
     - switch.turn_on: timer_ringing
+
+
+select:
+  - platform: template
+    entity_category: config
+    name: Wake word engine location
+    id: wake_word_engine_location
+    optimistic: true
+    restore_value: true
+    options:
+      - In Home Assistant
+      - On device
+    initial_option: On device
+    on_value:
+      - if:
+          condition:
+            lambda: return !id(init_in_progress);
+          then:
+            - wait_until:
+                lambda: return id(voice_assistant_phase) == ${voice_assist_muted_phase_id} || id(voice_assistant_phase) == ${voice_assist_idle_phase_id};
+            - if:
+                condition:
+                  lambda: return x == "In Home Assistant";
+                then:
+                  - micro_wake_word.stop
+                  - logger.log: "################################### micro_wake_word.stop"
+                  - delay: 30ms
+                  - if:
+                      condition:
+                        switch.is_off: mic_mute_switch
+                      then:
+                        #- lambda: id(va).set_use_wake_word(true);
+                        #- voice_assistant.start_continuous:
+            - if:
+                condition:
+                  lambda: return x == "On device";
+                then:
+                  #- lambda: id(va).set_use_wake_word(false);
+                  #- voice_assistant.stop
+                  - delay: 30ms
+                  - if:
+                      condition:
+                        switch.is_off: mic_mute_switch
+                      then:
+                        - micro_wake_word.start         
+                        - logger.log: "##################################### micro_wake_word.start"
+
+
 
 script:
   # Script executed when we want to play sounds on the device.
